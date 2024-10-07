@@ -23,7 +23,35 @@
 <script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
 <script src="js/jquery.easing.1.3.min.js"></script>
 <script src="js/jquery.easing.compatibility.js"></script>
-
+<script>
+	let score = 0;
+	let q = 0;
+	const questions = [
+		['Ile kontynentów jest na Ziemi?', 7],
+		['Ile planet znajduje się w Układzie Słonecznym?', 8],
+		['Ile kości ma dorosły człowiek?', 206]
+	];
+	function wynik(){
+		let message = 'Liczba punktów: ' + score;
+		message += ' z ' + questions.length;
+		message += '.';
+		document.getElementById('wynik').textContent = message;
+	}
+	function testQuestion(question){
+		let answer = document.getElementById('answer').value;
+		if(answer == questions[q][1]){
+			score++;
+		}
+		q++;
+		if(question < questions.length){
+		document.getElementById('answer').value='';
+		document.getElementById('question').textContent = questions[q][0];
+		}else{
+			wynik();
+		}
+		document.getElementById('question').textContent = questions[q][0];
+	}
+</script>
 
 </head>
 
@@ -123,7 +151,6 @@
 				</div>
 				<button onclick="dane()">Wyświetl dane</button>
 			</div>
-			<!-- zad4 -->
 			<script>
 				document.getElementById("surname").innerHTML = "Zawiszewski";
 				document.getElementById("name").innerHTML = "Kacper";
@@ -151,122 +178,13 @@
 				<h1>Projekt 1</h1>
 
 				<p>Miejsce na projekt laboratoryjny</p>
-				<script async>
-					let name = prompt('Jak masz na imie?','');
-				</script>
-				<script async>
-					document.write('<p>Ćw. 1. Witaj, ' + name + '</p>');
-				</script>
-				<!--Zad 1 -->
-				<script>
-					let tablica = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piatek', 'Sobota', 'Niedziela'];
-					alert(tablica[3]);
-					tablica[tablica.length-1] = 'Nowy dzien';
-					alert(tablica[tablica.length-1]);
-				</script>
-				<script>
-					tablica[7]='8 dzien';
-				</script>
-				<script>
-					tablica[tablica.length]= 'kolejny dzien';
-				</script>
-				<script>
-					tablica.push('nowy10','nowy11','nowy12','nowy13')
-				</script>
-				<script>
-					tablica.unshift('nowy14','nowy15')
-				</script>
-				<!--Zad 2 -->
-				<script>
-					let nowaTablica = ['Auto','Rower','Autobus','Pociag'];
-					document.write('<p>Pierwszy element to <strong>');
-					document.write(nowaTablica[0] + '</strong></p>');
-					document.write('<p>Ostatni element to <strong>');
-					document.write(nowaTablica[nowaTablica.length-1] + '</strong></p>');
-					nowaTablica.unshift('Statek');
-					document.write('<p>Pierwszy element to <strong>');
-					document.write(nowaTablica[0] + '</strong></p>');
-					
-				
-				</script>
-				<!--Zad 3 -->
-				<script>
-					const formsCounter = document.getElementsByTagName('*').length;
-					/*Komenda ta policzyła wszystkie elementy HTML czyli ,h1,p,div itp. w sekcji o id projekt1*/
-					document.write('<p>Ilość elementów w sekcji ');
-					document.write(formsCounter + '</p>');
-					
-				</script>
-				<!--Zad 4 cd. -->
-				<script>
-					let x=0;
-					document.write('<p>Tablica while:');
-					while( x<(tablica.length/2)){
-						document.write(tablica[x]+',');
-						x++;
-					}
-					document.write('</p>');
-				</script>
-				<script>
-					let i=0;
-					document.write('<p>Tablica for:');
-					for (i=0;i<(tablica.length/2);i++){
-						document.write(tablica[i]+',');
-					}
-					document.write('</p>');
-				</script>
-			</div>
-		</div>
-	</section>
-
-
-	<section id="projekt2">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 2</h1>
-				
-				<p>Miejsce na projekt laboratoryjny</p>
 				<p id="question"></p>
-            	<input type="text" id="answer" placeholder="Twoja odpowiedź">
-            	<button onclick="submit()">Zatwierdź odpowiedź</button>
-            	<p id="result"></p>
+				<input type="text" id="answer" placeholder="Twoja odpowiedź">
+				<button onclick="testQuestion('answer')">Następne pytanie</button>
+				<p id="wynik"></p>
 				<script>
-					const questions = [
-						['Ile kontynentów jest na Ziemi?', 7],
-						['Ile planet znajduje się w Układzie Słonecznym?', 8],
-						['Ile kości ma dorosły człowiek?', 206]
-					];
-					let question =0;
-					let score = 0;
-					function showQuestion(){
-						if (question < questions.length) {
-                        	document.getElementById('question').textContent = questions[question][0];
-                    	}					}
-					function submit(){
-						let answer = document.getElementById('answer').value;
-						if (answer == questions[question][1]) {
-							alert('Prawidłowa odpowiedź!');
-							score++;
-						} else {
-							alert('Błąd. Prawidłowa odpowiedź to ' + questions[question][1]);
-						}
-						question++;
-						if(question < questions.length){
-							document.getElementById('answer').value='';
-							showQuestion();
-						}else{
-							result();
-						}
-					}
-					function result(){
-						document.getElementById('question').textContent = 'Koniec quizu!';
-						document.getElementById('result').textContent = 'Twój wynik: '+ score;
-					}
-					showQuestion();
+					document.getElementById('question').textContent = questions[q][0];	
 				</script>
-				<div>
-
-				</div>
 			</div>
 		</div>
 	</section>
