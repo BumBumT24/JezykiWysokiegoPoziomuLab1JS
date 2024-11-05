@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Programowanie w JAVASCRIPT - template">
+<meta name="author" content="dr inż. Jacek Paluszak">
+<link rel="icon" href="img/favicon.ico">
+
+<title>Programowanie w JAVASCRIPT</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<link href="css/navbar-fixed-top.css" rel="stylesheet">
+<script src="js/ie-emulation-modes-warning.js"></script>
+
+<!-- jQuery  -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+<script src="js/jquery.easing.1.3.min.js"></script>
+<script src="js/jquery.easing.compatibility.js"></script>
+<script>
+	let score = 0;
+	let q = 0;
+	const questions = [
+		['Ile kontynentów jest na Ziemi?', 7],
+		['Ile planet znajduje się w Układzie Słonecznym?', 8],
+		['Ile kości ma dorosły człowiek?', 206]
+	];
+	function wynik(){
+		let message = 'Liczba punktów: ' + score;
+		message += ' z ' + questions.length;
+		message += '.';
+		document.getElementById('wynik').textContent = message;
+	}
+	function testQuestion(question){
+		let answer = document.getElementById('answer').value;
+		if(answer == questions[q][1]){
+			score++;
+		}
+		q++;
+		if(question < questions.length){
+		document.getElementById('answer').value='';
+		document.getElementById('question').textContent = questions[q][0];
+		}else{
+			wynik();
+		}
+		document.getElementById('question').textContent = questions[q][0];
+	}
+</script>
+
+</head>
+
+<body>
+	
+	<!-- navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="img/logo512x128.png"
+					height="40" alt=""></a> <a class="navbar-brand logotext" href="#">Laboratorium</a>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#main-page"
+						class="btn btn-primary" title="Strona główna"> <span
+							class="glyphicon glyphicon-home"></span>
+					</a></li>
+					<li><a href="#projekt1">Projekt 1</a></li>
+					<li><a href="#projekt2">Projekt 2</a></li>
+					<li><a href="#form" data-toggle="modal"
+						data-target="#ModalForm">Kontakt</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Opcje <span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Akcja 1</a></li>
+							<li><a href="#">Akcja 2</a></li>
+							<li><a href="#">Akcja 3</a></li>
+							<li role="separator" class="divider"></li>
+							<li class="dropdown-header">Linki</li>
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+
+	</nav>
+
+	<!-- Main container -->
+	<section id="main-page">
+		<div class="container">
+
+			<div class="jumbotron">
+				<h1>Języki wysokiego poziomu <br> w aplikacjach internetowych</h1>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>nazwisko:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="surname"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>imię:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="name"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>grupa:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="group">1</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>email:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="mail"></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>nr indeksu:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="indeks"></p>
+					</div>
+				</div>
+				<button onclick="dane()">Wyświetl dane</button>
+			</div>
+			<script>
+				document.getElementById("surname").innerHTML = "Zawiszewski";
+				document.getElementById("name").innerHTML = "Kacper";
+				document.getElementById("group").innerHTML = "1";
+				document.getElementById("mail").innerHTML = "20510@student.ans-elblag.pl";
+				document.getElementById("indeks").innerHTML = "20510";
+			</script>
+			<script>
+				function dane(){
+					let surname = document.getElementById("surname").textContent;
+					let name = document.getElementById("name").textContent;
+					let group = document.getElementById("group").textContent;
+					let mail = document.getElementById("mail").textContent;
+					let indeks = document.getElementById("indeks").textContent;
+					alert("Nazwisko: " + surname + " Imię: " + name + " Grupa: " + group + " Mail: " + mail + " Indeks: " + indeks);
+				}
+			</script>
+		</div>
+	</section>
+	<!-- /container -->
+
+	<section id="projekt1">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 1</h1>
+
+				<p>Miejsce na projekt laboratoryjny</p>
+				<p class="pq">Paragraf1</p>
+				<p>paragraf2</p>
+				<span class="pq">Randowmowy tekst</span>
+				<span class="pullquote">Nierandomowy tekst</span>
+				<script>
+					$(document).ready(function(){
+						$('span.pq').each(function() {
+							const quote=$(this).clone();
+							quote.removeClass('pq');
+							quote.addClass('pullquote');
+							$(this).before(quote);
+						}); // koniec funkcji each
+					}); // koniec funkcji ready
+				</script>				
+			</div>
+		</div>
+	</section>
+	<section id="projekt2">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 2</h1>
+				<script>
+					function show(){
+						alert("podwojne klikniecie");
+					}
+					$(document).ready(function(){
+						$(document).dblclick(show);
+					});
+					
+				</script>				
+			</div>
+		</div>
+	</section>
+	<section id="projekt3">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 3</h1>
+				<a href="https://www.google.pl/?hl=pl" class="link">google.pl</a>
+				<div class="main"></div>
+				<script>
+					$('a').mouseover(function(){
+						const message = "<p>Wskazałeś odnośnik myszą!</p>";
+						$('.main').append(message);
+					});
+					
+				</script>				
+			</div>
+		</div>
+	</section>
+	<section id="projekt4">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 4</h1>
+				<form id="myForm">
+					<button type="button" id="myButton" class="btn btn-primary">Kliknij mnie!</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="1" data-style="style1">Przycisk 1</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="2" data-style="style2">Przycisk 2</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="3" data-style="style3">Przycisk 3</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="4" data-style="style4">Przycisk 4</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="5" data-style="style5">Przycisk 5</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="6" data-style="style6">Przycisk 6</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="7" data-style="style7">Przycisk 7</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="8" data-style="style8">Przycisk 8</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="9" data-style="style9">Przycisk 9</button>
+					<button type="button" class="style-button btn btn-secondary" data-number="10" data-style="style10">Przycisk 10</button></form>
+				<div class="main2"></div>
+				<script>
+					$(document).ready(function() {
+						$('.style-button').click(function() {
+						let buttonNumber = $(this).attr('data-number');
+                        let styleClass = $(this).data('style');
+
+                        // Zmiana stylu na podstawie przypisanej klasy dla wszystkich <p>
+                        $('p').addClass(styleClass);
+
+                        // Dodanie akapitu w sekcji .main
+                        $('.main2').append(`<p>Przycisk ${buttonNumber} zmienił styl wszystkich elementów p </p>`);
+
+                        // Zmiana tekstu przycisku
+                        $(this).text(`Przycisk ${buttonNumber} kliknięty`);
+                    });
+						$('#myButton').click(function() {
+							$(this).text("Zostałem kliknięty!");
+						});
+					});
+				</script>			
+			</div>
+		</div>
+	</section>
+	<section id="projekt5">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 5</h1>
+				<table border="1" class="table">
+					<tr><th>Cytaty</th><th>Treść</th><th>Inputy</th></tr>
+					<tr><td>Cytat 1</td><td>"Lepiej zaliczać się do niektórych, niż do wszystkich.-Andrzej Sapkowski, Krew elfów"</td><td><input type="text" ></td></tr>
+					<tr><td>Cytat 2</td><td>"Książki są lustrem: widzisz w nich tylko to co, już masz w sobie.-Carlos Ruiz Zafón, Cień wiatru"</td><td><input type="text" ></td></tr>
+					<tr><td>Cytat 3</td><td>"Nie rozpaczaj, że ludzie Cię nie rozumieją. Martw się tym, że to ty nie rozumiesz ludzi”.-Konfucjusz"</td><td><input type="text" ></td></tr>
+					<tr><td>Cytat 4</td><td>"Ludzie nie dlatego przestają się bawić, że się starzeją, lecz starzeją się, bo przestają się bawić.-Mark Twain"</td><td><input type="text" ></td></tr>
+					<tr><td>Cytat 5</td><td>"Człowiek to jedyne zwierzę, które się rumieni. I jedyne, które musi.-Mark Twain"</td><td><input type="text" ></td></tr>
+				
+				</table>			
+			</div>
+		</div>
+	</section>
+	<section id="projekt6">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 6</h1>
+				<button class="btn btn-primary" id="ZmianaTla" data-number="11">1. Zmien kolor tła</button>
+				<button class="btn btn-primary" id="Pogrob2" data-number="12">2. Pogrób co drugi wiersz</button>
+				<button class="btn btn-primary" id="PodkreslPierwszy" data-number="13">3. Podkreśli pierwszy wiersz</button>
+				<button class="btn btn-primary" id="Chowanie"data-number="14">4. Schowaj inputy</button>
+						
+			</div>
+		</div>
+	</section>
+	<section id="projekt7">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 7</h1>
+				<button class="btn btn-primary" id="Schowaj2" data-number="15">1. Schowaj co drugi wiersz</button>
+        		<button class="btn btn-primary" id="SchowajPierwszy" data-number="16">2. Schowaj pierwszy wiersz</button>
+        		<button class="btn btn-primary" id="Wygaszanie" data-number="17">3. Wygasz wszystkie wiersza </button>		
+			</div>
+		</div>
+	</section>
+
+	<script>
+		$(document).ready(function() {
+			function ZmianaKolor(button) {
+				if ($(button).hasClass('kolor')) {
+					$(button).removeClass('kolor');
+				} else {
+					$(button).addClass('kolor');
+				}
+			}
+			$('#projekt6 .btn, #projekt7 .btn').click(function() {
+        		ZmianaKolor(this);
+   			 });
+			$('#ZmianaTla').click(function() {
+				$('#projekt5 table tr td').toggleClass('tlo');
+			});
+			
+			$('#Pogrob2').click(function() {
+				$('#projekt5 table tr:odd').toggleClass('pogrubienie');
+			});
+			
+			$('#PodkreslPierwszy').click(function() {
+				$('#projekt5 table tr:first').toggleClass('podkreslenie');
+			});
+			
+			$('#Chowanie').click(function() {
+				$('#projekt5 table input').toggle();
+			});
+		
+			$('#Schowaj2').click(function() {
+				$('#projekt5 table tr:even').fadeToggle(400);
+			});
+			
+			$('#SchowajPierwszy').click(function() {
+				$('#projekt5 table tr:first').slideToggle(400);
+			});
+		
+			$('#Wygaszanie').click(function() {
+				$('#projekt5 table tr').fadeOut();
+				$('#projekt5 table tr').fadeIn(500);
+
+			});
+		});
+		</script>
+
+	<footer>
+		<div class="container" style="margin-top: 5%">
+			<button type="button" class="btn btn-link" data-toggle="modal"
+				data-target="#myModal">Polityka prywatności</button>
+		</div>
+	</footer>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel1">Polityka prywatności</h4>
+				</div>
+				<div class="modal-body">polityka prywatności...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-warning btn-sm"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel2">Kontakt</h4>
+				</div>
+				<div class="modal-body">
+					<section id="form" style="margin-top: 5%">
+						<form action="index.html#kontakt" method="post"
+							onsubmit="return checkForm();">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="hide" id="errorName">Podanie imienia jest
+											wymagane!</p>
+									</div>
+								</div>
+								<div class="row" id="success">
+									<div class="col-md-2" align="right">
+										<label class="control-label" for="contactName">Imię</label>
+									</div>
+									<div class="col-md-4">
+										<input type="text" class="form-control " id="contactName"
+											aria-describedby="inputSuccess5Status" onblur="checkName()" />
+										<span class="hide" aria-hidden="true" id="true"></span> <span
+											id="inputSuccess5Status" class="sr-only">(success)</span>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="hide" id="errorLastName">Podanie nazwiska jest
+											wymagane!</p>
+									</div>
+								</div>
+								<div class="row" id="success2">
+									<div class="col-md-2" align="right">
+										<label class="control-label" for="contactLastName">Nazwisko</label>
+									</div>
+									<div class="col-md-4">
+										<input type="text" class="form-control " id="contactLastName"
+											aria-describedby="inputSuccess5Status"
+											onblur="checkLastName()" /> <span class="hide"
+											aria-hidden="true" id="true2"></span> <span
+											id="inputSuccess5Status2" class="sr-only">(success)</span>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="hide" id="errorEmail">Podanie emaila jest
+											wymagane!</p>
+										<p class="hide" id="errorEmail2">Błędny email!</p>
+									</div>
+								</div>
+								<div class="row" id="success3">
+									<div class="col-md-2" align="right">
+										<label class="control-label" for="contactEmail">Email</label>
+									</div>
+									<div class="col-md-4">
+										<input type="text" class="form-control " id="contactEmail"
+											aria-describedby="inputSuccess5Status" onblur="checkEmail()" />
+										<span class="hide" aria-hidden="true" id="true3"></span> <span
+											id="inputSuccess5Status3" class="sr-only">(success)</span>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-2" align="right">
+										<label for="information">Informacje</label>
+									</div>
+									<div class="col-md-4">
+										<textarea name="Informacje" cols="30" rows="7" id="Info"
+											maxlength="250"></textarea>
+									</div>
+								</div>
+								<br>
+								<div class="row ">
+									<div class="col-md-2"></div>
+									<div class="col-md-3">
+										<input class="btn btn-primary" type="submit" value="Wyślij" />
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</section>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-warning btn-sm"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/forms.js"></script>
+	
+</body>
+
+</html>
