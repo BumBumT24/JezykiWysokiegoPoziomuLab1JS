@@ -14,3 +14,6 @@ zad8 Link : https://bumbumt24.github.io/ReactLab8/
       
 Zad9 Link : https://bumbumt24.github.io/ReactLab9/      (Niestety BroweserRouter nie działa poprawnie na githun pages)
       Kod : https://github.com/BumBumT24/ReactLab9/tree/main
+
+Zad10 Link : https://bumbumt24.github.io/NextJsLab10/strony
+      Kod : https://github.com/BumBumT24/NextJsLab10
