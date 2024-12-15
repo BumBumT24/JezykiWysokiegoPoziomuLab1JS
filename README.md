@@ -7,13 +7,16 @@ zad1 Link: https://bumbumt24.github.io/JezykiWysokiegoPoziomuLab1JS/index.html
 zad6 Link : https://bumbumt24.github.io/JezykiWysokiegoPoziomuLab1JS/ZawiszewskiKacperLab6JQuery/index.html
 
 zad7 Link : https://bumbumt24.github.io/React/
-      kod :https://github.com/BumBumT24/React
+      kod : https://github.com/BumBumT24/React
 
 zad8 Link : https://bumbumt24.github.io/ReactLab8/
       Kod : https://github.com/BumBumT24/ReactLab8
       
-Zad9 Link : https://bumbumt24.github.io/ReactLab9/      (Niestety BroweserRouter nie działa poprawnie na githun pages)
-      Kod : https://github.com/BumBumT24/ReactLab9/tree/main
+Zad9 Link : https://react9-one.vercel.app
+      Kod : https://github.com/BumBumT24/React9
 
 Zad10 Link : https://bumbumt24.github.io/NextJsLab10/strony
       Kod : https://github.com/BumBumT24/NextJsLab10
+
+Zad11 Link : https://lab11-next-js-nine.vercel.app/
+      kod : https://github.com/BumBumT24/Lab11-NextJS
