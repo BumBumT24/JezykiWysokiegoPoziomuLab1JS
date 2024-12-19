@@ -20,3 +20,6 @@ Zad10 Link : https://bumbumt24.github.io/NextJsLab10/strony
 
 Zad11 Link : https://lab11-next-js-nine.vercel.app/
       kod : https://github.com/BumBumT24/Lab11-NextJS
+
+Zad12 Link : https://nextjs12-six-sand.vercel.app
+      kod: https://github.com/BumBumT24/Nextjs12
