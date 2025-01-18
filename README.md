@@ -23,3 +23,6 @@ Zad11 Link : https://lab11-next-js-nine.vercel.app/
 
 Zad12 Link : https://nextjs12-six-sand.vercel.app
       kod: https://github.com/BumBumT24/Nextjs12
+
+Zad13 Link : https://vercel.com/kacpers-projects-aa3b2120/next-js-13
+      Kod : https://github.com/BumBumT24/NextJS13
