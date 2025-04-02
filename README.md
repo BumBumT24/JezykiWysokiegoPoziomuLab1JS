@@ -1,3 +1,13 @@
+# Sztuczna Intelignecja
+Kacper Zawiszewski 20510 IIS
+20510@student.ans-elblag.pl
+
+Lab AI 1 znajduje się w głównym folderze pod nazwą Lab AI 11.ipynb
+
+
+
+
+
 # JezykiWysokiegoPoziomuLab1JS
 Kacper Zawiszewski 20510 IIS grupa 1
 20510@student.ans-elblag.pl
