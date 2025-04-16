@@ -3,7 +3,10 @@ Kacper Zawiszewski 20510 IIS
 20510@student.ans-elblag.pl
 
 Lab AI 1 znajduje się w głównym folderze pod nazwą Lab AI 1.ipynb
+
 Lab AI 2 znajduje się w głównym folderze pod nazwą LabAI2_20510.ipynb
+
+Lab AI 3 znajduje się w głównym folderze pod nazwą LabAI3_20510.ipynb
 
 
 
