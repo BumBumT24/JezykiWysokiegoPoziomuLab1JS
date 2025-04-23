@@ -8,6 +8,8 @@ Lab AI 2 znajduje się w głównym folderze pod nazwą LabAI2_20510.ipynb
 
 Lab AI 3 znajduje się w głównym folderze pod nazwą LabAI3_20510.ipynb
 
+Lab AI 4 znajduje się w głównym folderze w 2 plikach pod nazwami LabAI4cz1_20510.ipynb i Lab4Aicz2_20510.ipynb
+
 
 
 
